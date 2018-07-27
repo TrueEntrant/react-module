@@ -1,18 +1,52 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import {connect} from "react-redux";
+import LoginFields from '../components/login-fields.component'
+import {bindActionCreators} from "redux";
+import * as loginAction from '../action/login.action';
 
-export default class LoginPage extends Component {
-    // constructor() {
-    //     super();
-    // }
+class LoginPage extends Component {
+    constructor(props) {
+        super(props);
 
+        this.compareLoginInputs = this.compareLoginInputs.bind(this);
+    }
+
+    compareLoginInputs(inputs) {
+        console.log(inputs);
+        if(inputs.log == 123) {
+            console.log(this.props);
+            this.props.compareResChange(true);
+        }
+        else this.props.compareResChange(false);
+    }
+   
     render() {
         return (
-            <div>
-                <div className='user'>Login?</div>
-                <Link to='/profile/user1'>Login!</Link>
-                <Link to='/reg'>Registr!</Link>
+            <div className='login'>
+                
+                <LoginFields 
+                    match={this.props.match}
+                    onSubmit={this.compareLoginInputs} />
+                               
             </div>
         )
     }
 }
+
+
+function mapStateToProps(state) {
+    return {
+        users: state.usersData.users,
+        match: state.usersData.match
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        compareResChange: bindActionCreators(loginAction.Actions.compareResChange, dispatch)
+    }
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
