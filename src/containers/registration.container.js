@@ -12,7 +12,7 @@ export default class RegistrPage extends Component {
           <div>
             <div className='user'>Registration!</div>
             <Link to='/profile/user1'>Registr!</Link>
-            <Link to='/login'>Cancel!</Link>
+            <Link to='/'>Cancel!</Link>
           </div>
         )
     }

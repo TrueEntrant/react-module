@@ -5,16 +5,15 @@ import {Link} from 'react-router-dom';
 class LoginFields extends Component {
     constructor(props) {
         super(props);
-        // this.isMatch = this.props.match ? 'login-right' : 'login-wrong';
-        // this.badHigthlights = this.props.match ? null : 'login-bad'
+
         this.passChange = this.passChange.bind(this);
         this.logChange = this.logChange.bind(this);
         this.submit = this.submit.bind(this);
     }
 
     state = {
-        pass: '',
-        log: '',
+        password: '',
+        login: '',
         isMatch: 'login-right',
         badHigthlights: null
     }
@@ -40,14 +39,14 @@ class LoginFields extends Component {
     passChange(evt) {
         evt.preventDefault();
         this.setState({
-            pass: evt.target.value
+            password: evt.target.value
         })
     }
     
     logChange(evt) {
         evt.preventDefault();
         this.setState({
-            log: evt.target.value
+            login: evt.target.value
         })
     }
 
@@ -55,7 +54,7 @@ class LoginFields extends Component {
         evt.preventDefault();
         this.props.onSubmit(this.state);
         this.setState({
-            pass: '',
+            password: '',
         })
     }
 
@@ -67,14 +66,14 @@ class LoginFields extends Component {
                 <input 
                     type='text' 
                     className={`${this.state.badHigthlights} login__input`} 
-                    value={this.state.log} 
+                    value={this.state.login} 
                     onChange={this.logChange}
                     placeholder='Login:'
                 />
                 <input 
                     type='password' 
                     className={`${this.state.badHigthlights} login__input`} 
-                    value={this.state.pass} 
+                    value={this.state.password} 
                     onChange={this.passChange}
                     placeholder='Password:'
                 />

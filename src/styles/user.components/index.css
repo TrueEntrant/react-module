@@ -1,0 +1,88 @@
+.user {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    border-left: 2px solid grey;
+    border-right: 2px solid grey;
+    position: relative;
+    color: rgb(114, 112, 112);
+}
+.user .user__data {
+    display: flex;
+    min-height: 100vh;
+}
+.user .user__aside {
+    width: 31%;
+    display: flex;  
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(151, 151, 151);
+    position: relative;
+    color: #fff;
+}
+.user .user__description {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding-top: 60px;
+
+}
+.user .user__header {
+    text-align: center;
+    width: 70%;
+    padding: 20px 0;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.user .user__list {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 20px; 
+    padding: 0;
+    max-height: 190px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.user .user__title {
+    padding-left: 5px;
+    width: 100%;
+    background-color: rgb(233, 233, 233);
+
+}
+.user .user__list li {
+    background-color: aliceblue;
+    padding: 5px 0 5px 15px;
+    width: 50%;
+    border-bottom: .5px solid rgb(229, 243, 255);
+    height: 28.5px;
+}
+.user .user__aside .logo {
+    width:150px;
+    height: 90px;
+    margin-top: 20px;
+}
+.user .user__avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px; 
+    margin-top: 20px;
+
+}
+.user .logout__btn {
+    align-self: center;
+    position: relative;
+    bottom: -600px;
+    padding: 15px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    background: rgb(233, 233, 233) url('../../img/PowerIcon.png') no-repeat center center;
+    background-size: cover;
+}

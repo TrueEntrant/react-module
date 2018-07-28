@@ -1,6 +1,13 @@
-@import './login.components/login.field.css';
+@import './login.components/index.css';
+@import './user.components/index.css';
 
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+*:focus {
+    outline: none;
+}
 body {
     margin: 0 auto;
     width: 100%;
@@ -10,12 +17,13 @@ body {
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
+    height: 100vh;
 }
 
 .App {
-    margin: 70px auto;
-    width: 600px;
-    height: 800px;
+    margin: 0px auto;
+    width: 750px;
+    min-height: 100vh;
 }
 
 @media screen and (max-width: 500px) {

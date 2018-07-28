@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import UserFields from '../components/user-fields.component'
+// import {bindActionCreators} from "redux";
+import {connect} from "react-redux";
 
 
-export default class UserPage extends Component {
-    // constructor() {
-    //     super();
-    // }
+class UserPage extends Component {
+    constructor(props) {
+        super(props);
+
+        this.sheat = "sheat";
+    }
 
     render() {
         return(
-        <div>
-            <div className='user'>USER!</div>
-            <Link to='/login'>Logout!</Link>
-        </div>
+            <UserFields current={this.props.current}/>
         )
     }
+};
+
+
+
+function mapStateToProps(state) {
+    return {
+        current: state.usersData.current
+    }
 }
+
+export default connect(mapStateToProps)(UserPage);

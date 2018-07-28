@@ -1,17 +1,12 @@
 import * as registration from '../../action/registration';
 import * as login from '../../action/login.action';
+import dataBase from '../../data/db.json'
 
 
 const initialState = {
-    users: [
-        {
-            name: 'Vasya',
-            password: '123',
-            id: 1,
-            age: 18
-        }
-    ],
-    match: true
+    ...dataBase,
+    match: true,
+    current: ''
 }
 
 export function reducer(state = initialState, action) {
@@ -31,6 +26,13 @@ export function reducer(state = initialState, action) {
             return {
                 ...state,
                 match: res         
+            }
+        }
+        case login.LOGIN_APROVED: {
+            const res = action.payload
+            return {
+                ...state,
+                current: res         
             }
         }
         default: return state;

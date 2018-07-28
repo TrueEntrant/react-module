@@ -12,11 +12,22 @@ class LoginPage extends Component {
     }
 
     compareLoginInputs(inputs) {
-        if(inputs.log === '123') {
-            this.props.compareResChange(true);
-           
-        }
-        else this.props.compareResChange(false);
+        this.props.compareResChange(
+
+            this.props.users.some( user => {
+                if(user.login === inputs.login) {
+                    if(user.password === inputs.password) {
+                        this.props.setCurrentUser(user);                    
+                        this.props.history.push(`/profile/${user.id}`);
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            })
+        )
     }
    
     render() {
@@ -36,12 +47,14 @@ class LoginPage extends Component {
 function mapStateToProps(state) {
     return {
         users: state.usersData.users,
-        match: state.usersData.match
+        match: state.usersData.match,
+        current: state.usersData.current
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
+        setCurrentUser: bindActionCreators(loginAction.Actions.currentUserSet, dispatch),
         compareResChange: bindActionCreators(loginAction.Actions.compareResChange, dispatch)
     }
 }
