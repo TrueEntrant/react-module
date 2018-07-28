@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 class LoginFields extends Component {
     constructor(props) {
         super(props);
-        this.isMatch = this.props.match ? 'login-right' : 'login-wrong';
-        this.badHigthlights = this.props.match ? null : 'login-bad'
+        // this.isMatch = this.props.match ? 'login-right' : 'login-wrong';
+        // this.badHigthlights = this.props.match ? null : 'login-bad'
         this.passChange = this.passChange.bind(this);
         this.logChange = this.logChange.bind(this);
         this.submit = this.submit.bind(this);
@@ -14,13 +14,27 @@ class LoginFields extends Component {
 
     state = {
         pass: '',
-        log: ''
+        log: '',
+        isMatch: 'login-right',
+        badHigthlights: null
     }
 
     componentDidUpdate() {
-        console.log(this.isMatch, this.badHigthlights);
-        this.isMatch = this.props.match ? 'login-right' : 'login-wrong';
-        this.badHigthlights = this.props.match ? null : 'login-bad';
+        if(this.props.match === false) {
+            if(this.state.badHigthlights === null && this.state.isMatch === 'login-right') {
+                this.setState({
+                    isMatch: 'login-wrong',
+                    badHigthlights: 'login-bad'
+                })
+            }
+        } else if(this.props.match === true) {
+            if(this.state.badHigthlights === 'login-bad' && this.state.isMatch === 'login-wrong') {
+                this.setState({
+                    isMatch: 'login-right',
+                    badHigthlights: null
+                })
+            }
+        }
     }
 
     passChange(evt) {
@@ -49,17 +63,17 @@ class LoginFields extends Component {
         return (
             <form className='login__form' onSubmit={this.submit}>
                 <h2 className='login__header'>SIGN IN!</h2>
-                <p className={this.isMatch}>Invalid Login or/and Password </p>
+                <p className={this.state.isMatch}>Invalid Login or/and Password </p>
                 <input 
                     type='text' 
-                    className={`${this.badHigthlights} login__input`} 
+                    className={`${this.state.badHigthlights} login__input`} 
                     value={this.state.log} 
                     onChange={this.logChange}
                     placeholder='Login:'
                 />
                 <input 
                     type='password' 
-                    className={`${this.badHigthlights} login__input`} 
+                    className={`${this.state.badHigthlights} login__input`} 
                     value={this.state.pass} 
                     onChange={this.passChange}
                     placeholder='Password:'

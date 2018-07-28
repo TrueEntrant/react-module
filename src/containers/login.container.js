@@ -12,10 +12,9 @@ class LoginPage extends Component {
     }
 
     compareLoginInputs(inputs) {
-        console.log(inputs);
-        if(inputs.log == 123) {
-            console.log(this.props);
+        if(inputs.log === '123') {
             this.props.compareResChange(true);
+           
         }
         else this.props.compareResChange(false);
     }

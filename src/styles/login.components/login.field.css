@@ -45,6 +45,9 @@
 }
 
 .login .login__form .login-wrong {
+    position: absolute;
+    left: 24%;
+    top: 30%;
     display: inline-block;
     margin: 0;
     color: red;

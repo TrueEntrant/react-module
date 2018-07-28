@@ -28,7 +28,6 @@ export function reducer(state = initialState, action) {
         }
         case login.LOGIN_SUBMIT: {
             const res = action.payload
-            console.log(action)
             return {
                 ...state,
                 match: res         
