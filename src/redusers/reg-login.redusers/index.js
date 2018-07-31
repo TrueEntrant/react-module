@@ -13,8 +13,8 @@ export function reducer(state = initialState, action) {
     switch (action.type) {
         case registration.FORM_SUBMIT: {
 
-            const newUsers = state.users[0];
-            newUsers.name = action.payload;
+            const newUsers = state.users;
+            newUsers.push(action.payload);
 
             return {
                 ...state,

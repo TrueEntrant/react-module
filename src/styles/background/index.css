@@ -1,0 +1,57 @@
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    8% { opacity: 1; transform: scale(1.05); animation-timing-function: ease-out; }
+    17% { opacity: 1; transform: scale(1.1); }
+    25% { opacity: 0; transform: scale(1.1); }
+    100% { opacity: 0 }
+}
+.bg-slider,
+.bg-slider:after { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+    list-style: none;
+}
+.bg-slider:after { 
+    content: '';
+}
+.bg-slider li span { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 72s linear infinite 0s; 
+}
+.bg-slider li:nth-child(1) span { 
+    background-image: url('../../img/image1.jpg');
+}
+.bg-slider li:nth-child(2) span { 
+    background-image: url('../../img/image2.jpg');
+    animation-delay: 12s; 
+}
+.bg-slider li:nth-child(3) span { 
+    background-image: url('../../img/image3.jpg');
+    animation-delay: 24s; 
+}
+.bg-slider li:nth-child(4) span { 
+    background-image: url('../../img/image4.jpg');
+    animation-delay: 36s; 
+}
+.bg-slider li:nth-child(5) span { 
+    background-image: url('../../img/image5.jpg');
+    animation-delay: 48s; 
+}
+.bg-slider li:nth-child(6) span { 
+    background-image: url('../../img/image6.jpg');
+    animation-delay: 60s; 
+}

@@ -1,10 +1,10 @@
 export const FORM_SUBMIT = '[Registration Form] Send';
 
 export class Actions {
-    static registration(text) {
+    static newUserAdd(user) {
         return {
             type: FORM_SUBMIT,
-            formText: text,
+            payload: user
         }
     }
 }

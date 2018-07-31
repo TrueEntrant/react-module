@@ -1,19 +1,16 @@
 .login {
     width: 100%;
     min-height: 100vh;
-    border-radius: 5px;
     position: relative;
-
+    border-radius: 5px;
 }
-
 .login .login__form {
     height: 250px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -100%);
-    background-color: #fff;
-    border: 1px solid grey;
+    background: linear-gradient(45deg, rgba(0,0,0,0.35) 1%,rgba(0,0,0,0.31) 70%,rgba(0,0,0,0) 90%,rgba(0,0,0,0) 100%);
     border-radius: 5px;
     text-align: center;
     display: flex;
@@ -22,28 +19,25 @@
     flex-wrap: wrap;
     align-items: center;
     font-weight: bold;
-    color: rgb(114, 112, 112);
+    color: #fff;
 }
-
-.login .login__form login__header{
-    margin: 0;
+.login .login__form .login__header{
+    margin-top: 20px;
 }
-
 .login .login__form .login__regtext {
     margin: 0 10px;
-
 }
-
+.login .login__form .top-input {
+    margin-top: 15px;
+}
 .login .login__form .login__input {
-    /* margin: 10px 30px; */
     min-width: 200px;
-    min-height: 20px;
+    min-height: 22px;
     border: .5px solid grey;
     border-radius: 2px;
     text-indent: 4px;
     color: rgb(114, 112, 112);
 }
-
 .login .login__form .login-wrong {
     position: absolute;
     left: 24%;
@@ -53,19 +47,37 @@
     color: red;
     font-size: 10px;
 }
-
 .login .login__form .login-right {
     display: none;
 }
-
 .login .login__form .login-bad {
     border-color: red;
 }
-
-
 .login .login__form .login__btn {
     width: 120px;
-    /* margin: 10px 0 20px 0; */
+    background-color: grey;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 6px 6px;
+    color: #fff;
+    font-size: 18px;
+}
+.login .login__form .login__btn:hover {
+    color: black;
+}
+.login .login__form .login__btn:active {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.reg-btn {
+    color: black;
+}
+.reg-btn:hover {
+    color: aliceblue;
+}
+@media screen and (max-width: 650px) {
+    .login .login__form .login__input {
+        min-width: 0;
+        max-width: 70%;
+    }
 
 }
-

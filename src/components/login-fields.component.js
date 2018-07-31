@@ -65,7 +65,7 @@ class LoginFields extends Component {
                 <p className={this.state.isMatch}>Invalid Login or/and Password </p>
                 <input 
                     type='text' 
-                    className={`${this.state.badHigthlights} login__input`} 
+                    className={`${this.state.badHigthlights} top-input login__input`} 
                     value={this.state.login} 
                     onChange={this.logChange}
                     placeholder='Login:'
@@ -82,7 +82,7 @@ class LoginFields extends Component {
                     className='login__btn'
                     value='Login'
                 />
-                <p className='login__regtext'>Dont have an Account? <Link className='' to='/reg'>Reg now!</Link></p>
+                <p className='login__regtext'>Dont have an Account? <Link className='reg-btn' to='/reg'>Reg now!</Link></p>
             </form>
         )
     }
