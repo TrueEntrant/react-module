@@ -4,12 +4,14 @@ import LoginFields from '../components/login-fields.component'
 import {bindActionCreators} from "redux";
 import * as loginAction from '../action/login.action';
 
+
 class LoginPage extends Component {
     constructor(props) {
         super(props);
-
+        
         this.compareLoginInputs = this.compareLoginInputs.bind(this);
     }
+
 
     compareLoginInputs(inputs) {
         this.props.compareResChange(
@@ -55,7 +57,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         setCurrentUser: bindActionCreators(loginAction.Actions.currentUserSet, dispatch),
-        compareResChange: bindActionCreators(loginAction.Actions.compareResChange, dispatch)
+        compareResChange: bindActionCreators(loginAction.Actions.compareResChange, dispatch),
     }
 }
 

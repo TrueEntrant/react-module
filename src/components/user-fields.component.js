@@ -4,7 +4,7 @@ import img from '../img/standart.png';
 import logo from '../img/log.png'
 
 export default function UserFields (props) {
-
+    const avatar = props.current.avatar || logo;
     return (
 
 
@@ -14,7 +14,7 @@ export default function UserFields (props) {
             <div className='user__data'>
 
                 <div className='user__aside'>
-                    <img className='logo' src={logo} alt='logo' />
+                    <img className='logo' src={avatar} alt='logo' />
                     <p>UA comunity</p>
                     <img className='user__avatar' src={img} alt='avatar'/>
                     <p className='user__avatar__name'>{`${props.current.name} ${props.current.lastname}`}</p>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {HashRouter, Route, Switch} from 'react-router-dom';
 import UserPage from '../containers/user.container';
 import LoginPage from '../containers/login.container';
 import RegistrPage from '../containers/registration.container';
@@ -7,7 +7,7 @@ import BgSlider from '../components/background.slider';
 
 function RootRouter() {
   return (
-      <BrowserRouter>
+      <HashRouter>
         <div className="App">
           <BgSlider />
           <Switch>
@@ -16,7 +16,7 @@ function RootRouter() {
             <Route exact path='/reg' component={RegistrPage}/>
           </Switch>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     )
 }
 
